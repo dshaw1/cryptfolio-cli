@@ -1,7 +1,7 @@
 {
   "name": "cryptfolio",
-  "version": "0.0.1",
-  "description": "A simple Node.js cryptocurrency CLI to track your live portfolio value.",
+  "version": "0.0.2",
+  "description": "A simple cryptocurrency CLI to track your portfolio value with live updates.",
   "main": "node src/index.js",
   "scripts": {
     "dev": "node src/index.js",
