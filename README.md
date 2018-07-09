@@ -9,12 +9,11 @@ A simple cryptocurrency CLI to track your portfolio value with live updates.
 ```
 $ npm install -g cryptfolio
 ```
+## Usage
 
 <p align="center">
 	<img src="/cryptfolio-demo.gif">
 </p>
-
-## Usage
 
 ### Add your portfolio
 
