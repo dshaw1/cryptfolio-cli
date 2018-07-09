@@ -1,0 +1,35 @@
+{
+  "name": "cryptfolio",
+  "version": "0.0.1",
+  "description": "A simple Node.js cryptocurrency CLI to track your live portfolio value.",
+  "main": "node src/index.js",
+  "scripts": {
+    "dev": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "cryptfolio": "./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dshaw1/cryptfolio-cli.git"
+  },
+  "author": "Dylan Shaw (https://github.com/dshaw1/cryptfolio-cli)",
+  "keywords": [
+    "bitcoin",
+    "crypto",
+    "cryptocurrency",
+    "cryptfolio",
+    "cli",
+    "node"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chalk": "^2.4.1",
+    "cli-table2": "^0.2.0",
+    "commander": "^2.15.1",
+    "draftlog": "^1.0.12",
+    "ora": "^2.1.0"
+  }
+}
