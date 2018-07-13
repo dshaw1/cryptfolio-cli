@@ -75,5 +75,6 @@ MIT
 
 ## TODO
 
+- Allow cryptos with non-matching symbols (IOTA/MIOTA) to be added to the table without a name
 - Add tests
 - Add no-portfolio option (Generic top 10)
