@@ -175,7 +175,6 @@ const initialDataRequest = async () => {
       data.map(item => {
         cryptoRows.push(new CryptoRenderer(item));
       });
-      // const portfolioValue = calculateTotal(data);
       portfolioTotal = new PortfolioCalculator(calculateTotal(data));
       liveSpinner.start();
     } catch (err) {
