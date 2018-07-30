@@ -87,7 +87,7 @@ const request = async cryptoNames => {
     Object.values(response.data.RAW).filter(item => {
       cryptoNames.map(val => {
         let crypto = item[preferredCurrency];
-        if (crypto.FROMSYMBOL === val.name) {
+        if (crypto.FROMSYMBOL === val.name || crypto.FROMSYMBOL === val.title) {
           crypto.symbol = val.name;
           crypto.name = val.title;
           crypto.amount = Number(val.amount);
