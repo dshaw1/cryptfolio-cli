@@ -20,14 +20,14 @@ module.exports = {
     return currenciesList[currencyIndex];
   },
   calculateTotal: cryptos => {
-    let valueArr = [];
+    let value = [];
     cryptos.map(crypto => {
-      valueArr.push(parseFloat(crypto.value.slice(1, crypto.value.length)));
+      value.push(parseFloat(crypto.value.slice(1, crypto.value.length)));
     });
-    valueArr = valueArr.reduce((accumulator, currentValue) => {
+    value = value.reduce((accumulator, currentValue) => {
       return accumulator + currentValue;
     });
-    return valueArr.toFixed(2);
+    return value.toFixed(2);
   },
   clearTerminal: () => {
     return process.stdout.write('\033c');
@@ -56,8 +56,13 @@ module.exports = {
     }
   },
   readPortfolioData: () => {
+    const productionDir = process.env['HOME'] + '/.cryptfolio/portfolio.json';
+    const testDir = './tests/portfolio.json';
+    const portfolioDir =
+      process.env.NODE_ENV === 'test' ? testDir : productionDir;
+
     try {
-      const data = fs.readFileSync(process.env['HOME'] + '/.cryptfolio/portfolio.json');
+      const data = fs.readFileSync(portfolioDir);
       return Object.entries(JSON.parse(data)).map(item => {
         const portfolioData = {
           name: item[0].toUpperCase(),
@@ -88,7 +93,7 @@ module.exports = {
   },
   requestCryptoList: async portfolio => {
     try {
-      const arr = [];
+      const cryptoList = [];
       const response = await axios.get(
         'https://api.coinmarketcap.com/v2/listings'
       );
@@ -96,11 +101,11 @@ module.exports = {
       response.data.data.map(item => {
         portfolio.map(p => {
           if (item.symbol === p.name.toString()) {
-            arr.push({ name: p.name, amount: p.amount, title: item.name });
+            cryptoList.push({ name: p.name, amount: p.amount, title: item.name });
           }
         });
       });
-      return arr;
+      return cryptoList;
     } catch (err) {
       rl.clearLine(process.stdout, 0);
       rl.cursorTo(process.stdout, 0, null);
