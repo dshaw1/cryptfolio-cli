@@ -71,8 +71,3 @@ If you would like any feature just add a pull request or add an issue with a fea
 ## License
 
 MIT
-
-
-## TODO
-
-- Add tests
