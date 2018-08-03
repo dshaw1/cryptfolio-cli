@@ -53,7 +53,7 @@ const preferredInterval = program.interval;
 
 // Clear screen and print program info
 clearTerminal();
-console.log(chalk.white.bgGreen.bold('CRYPTFOLIO v.0.0.3'));
+console.log(chalk.white.bgGreen.bold('CRYPTFOLIO v.0.0.4'));
 if (!program.limit) {
   console.log();
   console.log(`Currency: ${preferredCurrency}`);
