@@ -1,11 +1,11 @@
 {
   "name": "cryptfolio",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple cryptocurrency CLI to track your portfolio value with live updates.",
   "main": "node src/index.js",
   "scripts": {
     "dev": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test mocha './**/*.spec.js' --exit"
   },
   "bin": {
     "cryptfolio": "./src/index.js"
@@ -31,5 +31,9 @@
     "commander": "^2.15.1",
     "draftlog": "^1.0.12",
     "ora": "^2.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
   }
 }
